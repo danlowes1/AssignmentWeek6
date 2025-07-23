@@ -1,0 +1,3 @@
+python -m venv myenvpip install -r requirements.txt
+myenv\Scripts\activate
+pip install -r requirements.txt

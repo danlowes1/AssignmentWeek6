@@ -1,0 +1,13 @@
+(myenv) PS C:\bootcamp\AssignmentWeek6>  c:
+
+
+    ~~~~^^
+  File "c:\Users\user\.vscode\extensions\ms-python.debugpy-2025.10.0-win32-x64\bundled\libs\debugpy\launcher\__main__.py", line 47, in main
+    launcher.connect(host, port)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "c:\Users\user\.vscode\extensions\ms-python.debugpy-2025.10.0-win32-x64\bundled\libs\debugpy\launcher/../..\debugpy\launcher\__init__.py", line 27, in connect
+    sock.connect((host, port))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+(myenv) PS C:\bootcamp\AssignmentWeek6>  c:; cd 'c:\bootcamp\AssignmentWeek6'; & 'c:\bootcamp\AssignmentWeek6\myenv\Scripts\python.exe' 'c:\Users\user\.vscode\extensions\ms-python.debugpy-2025.10.0-win32-x64\bundled\libs\debugpy\launcher' '55202' '--' 'C:\bootcamp\AssignmentWeek6\main.py' 
+(myenv) PS C:\bootcamp\AssignmentWeek6> 
