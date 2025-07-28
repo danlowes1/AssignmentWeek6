@@ -52,7 +52,6 @@ class ReadmeGenerator:
         ).ask()
          
     def write_readme_file(self, file_path, project_info: ProjectInfo): # title, description, installation, usage, license_name, license_desc, author, email):
-         #new_readme_content = f"""# {title}
 
         # Create the README content
         new_readme_content = f"""# {project_info.title}  
@@ -114,7 +113,6 @@ class ReadmeGenerator:
             self.console.print("[yellow]README.md File Generator cancelled.[/yellow]")
             return None
 
-        # Collect all individual pieces of information first
         title = self.dv.rich_prompt("What is the title of your project?", color="cyan", validator=DataValidator.validate_not_empty)
         description = self.dv.rich_prompt("Provide a brief description", color="yellow")
         installation = self.dv.rich_prompt("Installation instructions", color="cyan")
@@ -131,11 +129,9 @@ class ReadmeGenerator:
             }
         ])
         
-        # Now you have both license_name and license_desc
         license_name = license_answer["license"]
         license_desc = self.licenses[license_name]
 
-        # Now create the ProjectInfo object with all the collected data
         project_info = ProjectInfo(
             title=title,
             description=description,
@@ -146,31 +142,6 @@ class ReadmeGenerator:
             author=author,
             email=email
         )
-
-
-        # license_answer = prompt([
-        #     {
-        #         "type": "list",
-        #         "name": "license",
-        #         "message": "Choose a license for your project:",
-        #         "choices": self.create_license_choices()
-        #     }
-        # ])
-        
-        # #license_name = license_answer["license"]
-        # project_info.license_name = license_answer["license"]
-        # project_info.license_desc = self.licenses[project_info.license_name]
-
-
-        # project_info = ProjectInfo(
-        #     title=self.dv.rich_prompt("What is the title of your project?", color="cyan", validator=DataValidator.validate_not_empty),
-        #     description=self.dv.rich_prompt("Provide a brief description", color="yellow"),
-        #     installation=self.dv.rich_prompt("Installation instructions", color="cyan"),
-        #     usage=self.dv.rich_prompt("How will your project be used", color="yellow"),
-        #     author=self.dv.rich_prompt("Who is the author of this project", color="cyan"),
-        #     email=self.dv.rich_prompt("What is your email address", color="yellow", validator=DataValidator.validate_email)
-        # )
-
 
         now = datetime.now()
         timestamp = now.strftime("%Y%m%d_%H%M")
