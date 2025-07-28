@@ -10,12 +10,10 @@ def select_folder_easygui():
         title="Select a Folder",
         default=os.getcwd() # Set initial directory
     )
-    # easygui returns None if the user cancels
+    # returns None if the user cancels
     return folder_path
 
-# Then in your collect_project_info():
 if __name__ == "__main__":
-
 
 
     # Use the easygui version
@@ -24,5 +22,3 @@ if __name__ == "__main__":
     # if file_path is None:
     #     console.print("[yellow]Folder selection cancelled. README.md will not be created.[/yellow]")
     #     return 
-
-    # ... rest of your code using file_path ...

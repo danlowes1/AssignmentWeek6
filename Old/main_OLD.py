@@ -23,7 +23,7 @@ def select_folder_easygui():
             default=os.getcwd()
         )
     finally:
-        # This is critical: ensure the Tkinter root window is destroyed
+        # This is critical. ensure the Tkinter root window is destroyed
         # whether the user selects a path or cancels.
         root.destroy()
     
